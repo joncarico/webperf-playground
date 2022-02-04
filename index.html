@@ -44,7 +44,7 @@
       }
       body {
         font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* web-safe, system font stack */
-        font-size: 18px;
+        font-size: clamp(16px, 2vw, 18px); /* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ */
         line-height: 1.5em;
         -webkit-font-smoothing: antialiased;
       }
@@ -104,11 +104,12 @@
         padding: 1em;
       }
       header h1 {
-        font-size: 4em;
+        font-size: clamp(24px, 5vw, 60px);
         text-align: center;
         line-height: 1.2em;
-        margin-bottom: 0;
-        padding: 25vh 5vw; /* pushes main content below the viewport so that h1 is the lcp element */
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 20vh 5vw; /* pushes main content below the viewport so that h1 is the lcp element */
       }
       main {
         margin: 0 auto;
