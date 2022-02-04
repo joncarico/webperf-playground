@@ -98,7 +98,12 @@
         text-align: right;
       }
       header nav ul li {
-        display: inline-block;
+        display: block;
+      }
+      @media screen and (min-width: 600px) {
+        header nav ul li {
+          display: inline-block;
+        }
       }
       header nav ul li a {
         color: #000000;
