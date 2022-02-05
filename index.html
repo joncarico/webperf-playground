@@ -68,7 +68,6 @@
         font-weight: 600;
         font-display: optional; /* https://web.dev/preload-optional-fonts/ */
         src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url(assets/opensans.woff2) format("woff2");
-        unicode-range:U+0020-007E, /* https://css-tricks.com/almanac/properties/u/unicode-range/ ; https://graphicdesign.stackexchange.com/questions/62050/how-to-know-what-are-the-unicode-ranges-are-covered-in-webfont */
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: "OpenSans-SemiBold", sans-serif;
@@ -190,9 +189,9 @@
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <header role="banner">
-        <nav aria-label="Main Menu" role="navigation">
-          <a href="#" class="logo"><img src="assets/logo.svg" alt="" width="50px" height="50px" /></a>
+    <header>
+        <nav aria-label="Main Menu">
+          <a href="#" class="logo"><img src="assets/logo.svg" alt="" width="50" height="50" /></a>
             <ul>
                 <li><a href="#">Nav Link 1</a></li>
                 <li><a href="#">Nav Link 2</a></li>
@@ -200,81 +199,79 @@
             </ul>
         </nav>
 
-        <h1 role="heading" aria-level="1">Web Vitals Starter Templates</h1>
+        <h1 aria-level="1">Web Vitals Starter Templates</h1>
     </header>
 
-    <main role="main">
+    <main>
         <section>
-            <article>
-                <p>I use these templates as a starter for my projects. I hope you find them useful!</p>
-                <p><strong>Source: <a href="https://github.com/joncarico/web-vitals_starter-templates">https://github.com/joncarico/web-vitals_starter-templates</a></strong></p>
-                <br /><br />
+          <p>I use these templates as a starter for my projects. I hope you find them useful!</p>
+          <p><strong>Source: <a href="https://github.com/joncarico/web-vitals_starter-templates">https://github.com/joncarico/web-vitals_starter-templates</a></strong></p>
+          <br /><br />
 
-                <h2>Web Vitals Patterns</h2>
-                <p>A collection of common UX patterns optimized for Core Web Vitals. This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores. You can use the code in these examples to help ensure your projects stay on the right track.</p>
-                <p><strong>Source: <a href="https://web.dev/patterns/web-vitals-patterns/">https://web.dev/patterns/web-vitals-patterns/</a></strong></p>
+          <h2>Web Vitals Patterns</h2>
+          <p>A collection of common UX patterns optimized for Core Web Vitals. This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores. You can use the code in these examples to help ensure your projects stay on the right track.</p>
+          <p><strong>Source: <a href="https://web.dev/patterns/web-vitals-patterns/">https://web.dev/patterns/web-vitals-patterns/</a></strong></p>
 
-                <h3>Carousels</h3>
-                <div id="carousel">
-                  <div id="slide-container">
-                    <div class="slide" data-slideIndex="0">
-                      <div class="slide-banner">Tour the Empire State Building! <a href="#">Buy tickets now.</a></div>
-                      <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+1" width="1200" height="600" alt="Sample Image" loading="lazy">
-                    </div>
-                    <div class="slide" data-slideIndex="1">
-                      <div class="slide-banner">Ride the Shinkansen! <a href="#">Buy tickets now.</a></div>
-                      <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+2" width="1200" height="600" alt="Sample Image" loading="lazy">
-                    </div>
-                    <div class="slide" data-slideIndex="2">
-                      <div class="slide-banner">Discover relaxation! <a href="#">Buy tickets now.</a></div>
-                      <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+3" width="1200" height="600" alt="Sample Image" loading="lazy">
-                    </div>
-                    <div class="slide" data-slideIndex="3">
-                      <div class="slide-banner">See penguins! <a href="#">Buy tickets now.</a></div>
-                      <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+4" width="1200" height="600" alt="Sample Image" loading="lazy">
-                    </div>
-                    <div class="slide" data-slideIndex="4">
-                      <div class="slide-banner">Take a ride on the wheel! <a href="#">Buy tickets now.</a></div>
-                      <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+5" width="1200" height="600" alt="Sample Image" loading="lazy">
-                    </div>
-                  </div>
-                  <div id="back-button" class="arrow back">←</div>
-                  <div id="forward-button" class="arrow forward">→</div>
-                  <div class="slide-indicators">
-                    <div class="slide-indicator active"></div>
-                    <div class="slide-indicator"></div>
-                    <div class="slide-indicator"></div>
-                    <div class="slide-indicator"></div>
-                    <div class="slide-indicator"></div>
-                  </div>
-                </div>
+          <h3>Carousels</h3>
+          <div id="carousel">
+            <div id="slide-container">
+              <div class="slide" data-slideIndex="0">
+                <div class="slide-banner">Tour the Empire State Building! <a href="#">Buy tickets now.</a></div>
+                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+1" width="1200" height="600" alt="Sample Image" loading="lazy">
+              </div>
+              <div class="slide" data-slideIndex="1">
+                <div class="slide-banner">Ride the Shinkansen! <a href="#">Buy tickets now.</a></div>
+                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+2" width="1200" height="600" alt="Sample Image" loading="lazy">
+              </div>
+              <div class="slide" data-slideIndex="2">
+                <div class="slide-banner">Discover relaxation! <a href="#">Buy tickets now.</a></div>
+                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+3" width="1200" height="600" alt="Sample Image" loading="lazy">
+              </div>
+              <div class="slide" data-slideIndex="3">
+                <div class="slide-banner">See penguins! <a href="#">Buy tickets now.</a></div>
+                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+4" width="1200" height="600" alt="Sample Image" loading="lazy">
+              </div>
+              <div class="slide" data-slideIndex="4">
+                <div class="slide-banner">Take a ride on the wheel! <a href="#">Buy tickets now.</a></div>
+                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+5" width="1200" height="600" alt="Sample Image" loading="lazy">
+              </div>
+            </div>
+            <div id="back-button" class="arrow back">←</div>
+            <div id="forward-button" class="arrow forward">→</div>
+            <div class="slide-indicators">
+              <div class="slide-indicator active"></div>
+              <div class="slide-indicator"></div>
+              <div class="slide-indicator"></div>
+              <div class="slide-indicator"></div>
+              <div class="slide-indicator"></div>
+            </div>
+          </div>
 
-                <h3>Images</h3>
-                <picture>
-                    <source media="(max-width: 720px)" width="600" height="300" data-srcset="https://via.placeholder.com/600x300.jpg?text=Source+Media+Max+720" />
-                    <source media="(min-width: 721px)" width="600" height="600" data-srcset="https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
-                    <img class="lazyload" src="https://via.placeholder.com/600x300.jpg?text=Img+Src" width="600" height="300" alt="" loading="lazy" />
-                </picture>
+          <h3>Images</h3>
+          <picture>
+              <source media="(max-width: 720px)" width="600" height="300" data-srcset="https://via.placeholder.com/600x300.jpg?text=Source+Media+Max+720" />
+              <source media="(min-width: 721px)" width="600" height="600" data-srcset="https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
+              <img class="lazyload" src="https://via.placeholder.com/600x300.jpg?text=Img+Src" width="600" height="300" alt="" loading="lazy" />
+          </picture>
 
-                <h3>Videos</h3>
-                <video class="lazyload" controls width="960" height="540" data-poster="https://via.placeholder.com/960x540.png?text=960+Poster" preload="none">
-                    <source src="assets/video.mp4" type="video/mp4">
-                </video>
+          <h3>Videos</h3>
+          <video class="lazyload" controls width="960" height="540" data-poster="https://via.placeholder.com/960x540.png?text=960+Poster" preload="none">
+              <source src="assets/video.mp4" type="video/mp4">
+          </video>
 
-                <h3>GIF-Style Videos</h3>
-                <video class="lazyload" autoplay loop muted playsinline width="320" height="240" preload="none">
-                    <source src="assets/video.mp4" type="video/mp4">
-                </video>
+          <h3>GIF-Style Videos</h3>
+          <video class="lazyload" autoplay loop muted playsinline width="320" height="240" preload="none">
+              <source src="assets/video.mp4" type="video/mp4">
+          </video>
 
-                <h3>Layouts</h3>
-                <p>A collection of layout patterns built using modern CSS APIs that will help you build common interfaces such as cards, dynamic grid areas, and full-page layouts.</p>
-                <p><strong>Source: <a href="https://web.dev/patterns/layout/">https://web.dev/patterns/layout/</a></strong></p>
-            </article>
+          <h3>Layouts</h3>
+          <p>A collection of layout patterns built using modern CSS APIs that will help you build common interfaces such as cards, dynamic grid areas, and full-page layouts.</p>
+          <p><strong>Source: <a href="https://web.dev/patterns/layout/">https://web.dev/patterns/layout/</a></strong></p>
         </section>
     </main>
 
-    <footer aria-label="Footer" role="contentinfo">
-        <nav aria-label="Footer Menu" role="navigation">
+    <footer aria-label="Footer">
+        <nav aria-label="Footer Menu">
             <ul>
                 <li><a href="#">Nav Link 1</a></li>
                 <li><a href="#">Nav Link 2</a></li>
