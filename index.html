@@ -252,14 +252,14 @@
           </div>
 
           <h3>Images</h3>
-          <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/#:~:text=For%20a%20hero%20image%20above%20the%20fold%2C%20use%20a%20loading%20value%20of%20eager. -->
+          <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
           <figure>
             <picture>
               <!--[if IE 9]><video style="display: none;"><![endif]-->
               <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
               <source media="(min-width: 721px)" width="600" height="600" srcset="https://via.placeholder.com/600x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
               <!--[if IE 9]></video><![endif]-->
-              <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" />
+              <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" />
             </picture>
             <figcaption>Image Caption</figcaption>
           </figure>
@@ -273,7 +273,7 @@
                   <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=NonLCP+Source+Media+Max+720" />
                   <source media="(min-width: 721px)" width="600" height="600" srcset="https://via.placeholder.com/600x600.jpg?text=NonLCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
                   <!--[if IE 9]></video><![endif]-->
-                  <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=NonLCP+Img+Src" alt="Image Alt" loading="lazy" />
+                  <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=NonLCP+Img+Src" alt="Image Alt" loading="lazy" decoding="async" />
                 </picture>
                 <figcaption>Image Caption</figcaption>
               </figure>
