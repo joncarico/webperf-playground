@@ -216,41 +216,6 @@
           <p>A collection of common UX patterns optimized for Core Web Vitals. This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores. You can use the code in these examples to help ensure your projects stay on the right track.</p>
           <p><strong>Source: <a href="https://web.dev/patterns/web-vitals-patterns/">https://web.dev/patterns/web-vitals-patterns/</a></strong></p>
 
-          <h3>Carousels</h3>
-          <div id="carousel">
-            <div id="slide-container">
-              <div class="slide" data-slideIndex="0">
-                <div class="slide-banner">Tour the Empire State Building! <a href="#">Buy tickets now.</a></div>
-                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+1" width="1200" height="600" alt="Sample Image" loading="lazy">
-              </div>
-              <div class="slide" data-slideIndex="1">
-                <div class="slide-banner">Ride the Shinkansen! <a href="#">Buy tickets now.</a></div>
-                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+2" width="1200" height="600" alt="Sample Image" loading="lazy">
-              </div>
-              <div class="slide" data-slideIndex="2">
-                <div class="slide-banner">Discover relaxation! <a href="#">Buy tickets now.</a></div>
-                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+3" width="1200" height="600" alt="Sample Image" loading="lazy">
-              </div>
-              <div class="slide" data-slideIndex="3">
-                <div class="slide-banner">See penguins! <a href="#">Buy tickets now.</a></div>
-                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+4" width="1200" height="600" alt="Sample Image" loading="lazy">
-              </div>
-              <div class="slide" data-slideIndex="4">
-                <div class="slide-banner">Take a ride on the wheel! <a href="#">Buy tickets now.</a></div>
-                <img src="https://via.placeholder.com/1200x600.jpg?text=Sample+Image+5" width="1200" height="600" alt="Sample Image" loading="lazy">
-              </div>
-            </div>
-            <div id="back-button" class="arrow back">←</div>
-            <div id="forward-button" class="arrow forward">→</div>
-            <div class="slide-indicators">
-              <div class="slide-indicator active"></div>
-              <div class="slide-indicator"></div>
-              <div class="slide-indicator"></div>
-              <div class="slide-indicator"></div>
-              <div class="slide-indicator"></div>
-            </div>
-          </div>
-
           <h3>Images</h3>
           <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
           <figure>
@@ -282,14 +247,24 @@
 
 
           <h3>Videos</h3>
-          <video class="lazyload" controls width="960" height="540" data-poster="https://via.placeholder.com/960x540.png?text=960+Poster" preload="none">
-              <source src="assets/video.mp4" type="video/mp4">
-          </video>
+          <div class="lazyload" data-noscript="">
+            <noscript>
+              <video preload="none" controls width="960" height="540" data-poster="https://via.placeholder.com/960x540.png?text=960+Poster">
+                  <source src="assets/video.webm" type="video/webm">
+                  <source src="assets/video.mp4" type="video/mp4">
+              </video>
+            </noscript>
+          </div>
 
           <h3>GIF-Style Videos</h3>
-          <video class="lazyload" autoplay loop muted playsinline width="320" height="240" preload="none">
-              <source src="assets/video.mp4" type="video/mp4">
-          </video>
+          <div class="lazyload" data-noscript="">
+            <noscript>
+              <video autoplay loop muted playsinline width="320" height="240">
+                  <source src="assets/video.webm" type="video/webm">
+                  <source src="assets/video.mp4" type="video/mp4">
+              </video>
+            </noscript>
+          </div>
 
           <h3>Layouts</h3>
           <p>A collection of layout patterns built using modern CSS APIs that will help you build common interfaces such as cards, dynamic grid areas, and full-page layouts.</p>
