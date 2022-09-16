@@ -127,9 +127,8 @@
     </style>
 
     <!-- MAIN CSS: remaining css not used in the initial viewport -->
-      <!-- Non-render Blocking with Fallback -->
-    <link rel="preload" href="assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="high">
-    <noscript><link rel="stylesheet" href="assets/main.css"></noscript>
+      <!-- Render Blocking: comparison testing -->
+    <link rel="stylesheet" href="assets/main.css" as="style" importance="high">
 
     <!-- CRITICAL JS: includes only js used for initial performance and tracking -->
     <script>
