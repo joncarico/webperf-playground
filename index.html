@@ -33,6 +33,12 @@
     <link rel="dns-prefetch" href="https://maps.google.com" importance="low" crossorigin>
     <link rel="dns-prefetch" href="https://maps.googleapis.com" importance="low" crossorigin>
 
+
+    <!-- MAIN CSS: remaining css not used in the initial viewport -->
+      <!-- Non-render Blocking with Fallback -->
+    <link rel="preload" href="assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="high">
+    <noscript><link rel="stylesheet" href="assets/main.css"></noscript>
+    
     <!-- CRITICAL CSS: includes only css used in the initial viewport -->
     <style>
       /* Custom Reset */
@@ -130,11 +136,6 @@
         padding: 3em 1em;
       }
     </style>
-
-    <!-- MAIN CSS: remaining css not used in the initial viewport -->
-      <!-- Non-render Blocking with Fallback -->
-    <link rel="preload" href="assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="high">
-    <noscript><link rel="stylesheet" href="assets/main.css"></noscript>
 
     <!-- CRITICAL JS: includes only js used for initial performance and tracking -->
     <script>
