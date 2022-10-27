@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Vitals Starter Templates</title>
     <meta name="description" content="A Starter Templates optimized for web vitals.">
+    <link rel="canonical" href="https://joncarico.github.io/web-vitals_starter-templates/" />
+    <link rel="manifest" href="/web-vitals_starter-templates/assets/manifest.webmanifest">
 
     <!-- PRELOAD: we know the exact url of the source -->
     <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml" importance="high">
@@ -268,23 +270,23 @@
               </video>
             </noscript>
           </div>
-          
+
           <h3>Embedded Content</h3>
-          
+
           <!-- YouTube -->
           <div class="lazyload" data-noscript="">
             <noscript>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </noscript>
           </div>
-          
+
           <!-- Twitter -->
           <div class="lazyload" data-noscript="">
             <noscript>
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Did someone say <a href="https://twitter.com/hashtag/rickroll?src=hash&amp;ref_src=twsrc%5Etfw">#rickroll</a> <a href="https://t.co/RsVap4D668">pic.twitter.com/RsVap4D668</a></p>&mdash; Scott G 🇦🇺 (@BuggaThe) <a href="https://twitter.com/BuggaThe/status/1569255555281338369?ref_src=twsrc%5Etfw">September 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </noscript>
           </div>
-          
+
           <!-- Instagram -->
           <div class="lazyload" data-noscript="">
             <noscript>
@@ -308,6 +310,13 @@
         </nav>
         <p><small>&copy; 2021</small></p>
     </footer>
-
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/web-vitals_starter-templates/assets/sw.js',
+            {scope: '/web-vitals_starter-templates/'}
+          )
+        }
+    </script>
 </body>
 </html>
