@@ -11,7 +11,8 @@
       {
         "src": "/web-vitals_starter-templates/assets/placeholder.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose": "maskable"
       }
   ]
 }
