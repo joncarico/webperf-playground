@@ -21,7 +21,7 @@ var URLS = [
   `${GHPATH}/assets/main.css`,
   `${GHPATH}/assets/main.js`,
   `${GHPATH}/assets/opensans.woff2`,
-  `${GHPATH}/assets/sw.js`
+  `${GHPATH}/sw.js`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
