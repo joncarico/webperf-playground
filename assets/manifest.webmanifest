@@ -1,0 +1,17 @@
+{
+  "name": "Web Vitals Starter Templates PWA",
+  "short_name": "WVPWA",
+  "description": "Uses Github Pages as a Progressive Web App",
+  "scope": "/web-vitals_starter-templates/",
+  "start_url": "/web-vitals_starter-templates/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+      {
+        "src": "/web-vitals_starter-templates/assets/placeholder.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ]
+}
