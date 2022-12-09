@@ -129,6 +129,17 @@
         max-width: 900px;
         padding: 3em 1em;
       }
+      #sticky-footer {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        position: fixed;
+        z-index: 99999;
+        min-height: 50px;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+      }
     </style>
 
     <!-- MAIN CSS: remaining css not used in the initial viewport -->
@@ -318,5 +329,21 @@
           )
         }
     </script>
+    <div id="sticky-footer">
+      <div class="lazyload" data-noscript="">
+        <noscript>
+          <figure>
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source media="(max-width: 720px)" width="300" height="50" srcset="https://via.placeholder.com/300x50.jpg?text=NonLCP+Source+Media+Max+720" />
+              <source media="(min-width: 721px)" width="300" height="50" srcset="https://via.placeholder.com/300x50.jpg?text=NonLCP+Source+Media+Min+721+1x, https://via.placeholder.com/300x50.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/300x50.jpg?text=Source+Media+Min+721+3x 3x" />
+              <!--[if IE 9]></video><![endif]-->
+              <img width="300" height="50" src="https://via.placeholder.com/300x50.jpg?text=NonLCP+Img+Src" alt="Image Alt" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Image Caption</figcaption>
+          </figure>
+        </noscript>
+      </div>
+    </div>
 </body>
 </html>
