@@ -9,6 +9,19 @@
     <link rel="canonical" href="https://joncarico.github.io/web-vitals_starter-templates/" />
     <link rel="manifest" href="/web-vitals_starter-templates/manifest.webmanifest">
 
+    <!-- CRITICAL CSS: includes only css used in the initial viewport -->
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      iframe {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
     <!-- SOCIAL META -->
       <!-- Open Graph / Facebook -->
     <meta property="og:type" content="">
@@ -47,7 +60,7 @@
 
 <body>
 
-  <iframe src="https://joncarico.github.io/web-vitals_starter-templates/" name="webpage" scrolling="yes" width="100%" height="100%"></iframe>
+  <iframe src="https://joncarico.github.io/web-vitals_starter-templates/" name="webpage" scrolling="yes" width="100%" height="100%" frameborder="0"></iframe>
 
 </body>
 </html>
