@@ -23,7 +23,8 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        height: 100vh; /* valnet set height */
+        height: 100vh; /* fallback for dvh */
+        height: 100dvh; /* dynamic viewport height */
         max-width: 100%; /* prevent overflow-x */
         overflow-y: auto; /* scroll if overflow-y */
       }
