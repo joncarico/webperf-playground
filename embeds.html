@@ -7,19 +7,21 @@
 
     <!-- CRITICAL CSS: this needs to be added to our codebase -->
     <style>
-      .twitter-embed,
-      .instagram-embed {
-        align-items: center; /* center embed within div */
-        display: flex; /* center embed within div */
-        justify-content: center; /* center embed within div */
-        height: 100vh; /* fallback for dvh */
-        height: 100dvh; /* dynamic viewport height */
-        max-width: 100%; /* prevent overflow-x */
-        overflow-y: auto; /* scroll if overflow-y */
-      }
-      .twitter-embed .twitter-tweet,
-      .instagram-embed .instagram-media {
-        margin: auto !important; /* flex overflow-y bugfix: https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container */
+      @media (max-width: 480px) /* only viewports <= 480px */ {
+        .twitter-embed,
+        .instagram-embed {
+          align-items: center; /* center embed within div */
+          display: flex; /* center embed within div */
+          justify-content: center; /* center embed within div */
+          height: 100vh; /* fallback for dvh */
+          height: 100dvh; /* dynamic viewport height */
+          max-width: 100%; /* prevent overflow-x */
+          overflow-y: auto; /* scroll if overflow-y */
+        }
+        .twitter-embed .twitter-tweet,
+        .instagram-embed .instagram-media {
+          margin: auto !important; /* flex overflow-y bugfix: https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container */
+        }
       }
     </style>
 
