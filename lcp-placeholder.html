@@ -12,7 +12,18 @@
 
     <!-- PRELOAD: we know the exact url of the source -->
     <link rel="preload" href="assets/placeholder.jpg" as="image" importance="high">
-    <link rel="preload" href="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/the-mandalorian-season-din-djarin-darksaber.jpg" as="image" importance="high">
+    <link rel="preload" media="(max-width: 480px)"
+      href="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/the-mandalorian-season-din-djarin-darksaber.jpg?q=50&fit=contain&w=480&h=&dpr=1.5"
+      importance="high" as="image">
+    <link rel="preload" media="(min-width: 481px) and (max-width: 767px)"
+      href="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/the-mandalorian-season-din-djarin-darksaber.jpg?q=50&fit=contain&w=767&h=&dpr=1.5"
+      importance="high" as="image">
+    <link rel="preload" media="(min-width: 768px) and (max-width: 1023px)"
+      href="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/the-mandalorian-season-din-djarin-darksaber.jpg?q=50&fit=contain&w=943&h=&dpr=1.5"
+      importance="high" as="image">
+    <link rel="preload" media="(min-width: 1024px)"
+      href="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/the-mandalorian-season-din-djarin-darksaber.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5"
+      importance="high" as="image">
       <!-- https://github.com/google/woff2 -->
     <link rel="preload" href="assets/opensans.woff2" as="font" type="font/woff2" importance="high" crossorigin>
 
