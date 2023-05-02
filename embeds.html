@@ -13,8 +13,9 @@
           align-items: center; /* center embed within div */
           display: flex; /* center embed within div */
           justify-content: center; /* center embed within div */
-          height: 100vh; /* fallback for dvh: https://web.dev/viewport-units/ */
-          height: 100dvh; /* dynamic viewport height */
+          height: 100%; /* expands div to max-height */
+          max-height: 100vh; /* fallback for dvh: https://web.dev/viewport-units/ */
+          max-height: 100dvh; /* dynamic viewport height */
           max-width: 100%; /* prevent overflow-x */
           overflow-y: auto; /* scroll if overflow-y */
         }
