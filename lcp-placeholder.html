@@ -241,7 +241,7 @@
             .heading_image figure {
               position: relative;
             }
-            .heading_image figure img:before {
+            .heading_image figure picture:before {
               content: ' ';
               display: block;
               position: absolute;
@@ -255,6 +255,11 @@
               background-repeat: no-repeat;
               background-position: 50% 50%;
               background-size: contain;
+              z-index: 0;
+            }
+            .heading_image figure picture img {
+              position: relative;
+              z-index: 1;
             }
           </style>
           <figure>
