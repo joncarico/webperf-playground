@@ -1,0 +1,9 @@
+main {
+    display: grid;
+    grid-template-columns: 20ch 1fr;
+    gap: 0.5rem;
+}
+
+button {
+    width: 20ch;
+}

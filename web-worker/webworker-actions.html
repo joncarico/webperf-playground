@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Worker Actions</title>
+    <link rel="stylesheet" href="webworker-actions.css">
+</head>
+
+<body>
+    <main>
+        <div>
+            <button>inc</button>
+            <button>double</button>
+            <button>square</button>
+        </div>
+        <section></section>
+    </main>
+
+    <script>
+        const worker = new Worker('actions.js');
+        let input = 7;
+
+        const actions = {
+            inc: './inc.js',
+            double: './double.js',
+            square: './square.js',
+        };
+
+        worker.postMessage({
+            action: 'actions',
+            value: Object.values(actions),
+        });
+
+        const domOutput = document.querySelector('section');
+
+        worker.addEventListener('message', evt => {
+            domOutput.innerHTML += `<div>${evt.data.action}: ${evt.data.value}</div>`;
+        });
+
+        [...document.querySelectorAll('button')].forEach(button => {
+            button.addEventListener('click', () => {
+                input = window.prompt('Input:', input);
+                input = parseInt(input, 10);
+                if (!isNaN(input)) {
+                    worker.postMessage({
+                        action: button.textContent,
+                        value: input
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
