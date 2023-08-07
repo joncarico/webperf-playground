@@ -52,19 +52,6 @@
         worker.addEventListener('message', evt => {
             domOutput.innerHTML += `<div>${evt.data.action}: ${evt.data.value}</div>`;
         });
-
-        [...document.querySelectorAll('button')].forEach(button => {
-            button.addEventListener('click', () => {
-                input = window.prompt('Input:', input);
-                input = parseInt(input, 10);
-                if (!isNaN(input)) {
-                    worker.postMessage({
-                        action: button.textContent,
-                        value: input
-                    });
-                }
-            });
-        });
     </script>
 </body>
 

@@ -35,21 +35,7 @@
     <script src="assets/square.js" defer></script>
     <script src="assets/jquery-3.7.0.min.js" defer></script>
     <script src="assets/script.js" defer></script>
-
-    <script>
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', () => {
-                input = window.prompt('Input:', input);
-                input = parseInt(input, 10);
-                if (!isNaN(input)) {
-                    worker.postMessage({
-                        action: button.textContent,
-                        value: input
-                    });
-                }
-            });
-        });
-    </script>
+    
 </body>
 
 </html>
