@@ -30,30 +30,14 @@
         <section></section>
     </main>
 
+    <script src="assets/inc.js" defer></script>
+    <script src="assets/double.js" defer></script>
+    <script src="assets/square.js" defer></script>
+    <script src="assets/jquery-3.7.0.min.js" defer></script>
+    <script src="assets/script.js" defer></script>
+
     <script>
-        const worker = new Worker('actions.js');
-        let input = 7;
-
-        const actions = {
-            inc: './assets/inc.js',
-            double: './assets/double.js',
-            square: './assets/square.js',
-            jquery: './assets/jquery-3.7.0.min.js',
-            script: './assets/script.js'
-        };
-
-        worker.postMessage({
-            action: 'actions',
-            value: Object.values(actions),
-        });
-
-        const domOutput = document.querySelector('section');
-
-        worker.addEventListener('message', evt => {
-            domOutput.innerHTML += `<div>${evt.data.action}: ${evt.data.value}</div>`;
-        });
-
-        [...document.querySelectorAll('button')].forEach(button => {
+        document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', () => {
                 input = window.prompt('Input:', input);
                 input = parseInt(input, 10);
