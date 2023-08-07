@@ -254,6 +254,64 @@
           <p>A collection of common UX patterns optimized for Core Web Vitals. This collection includes patterns that are often tricky to implement without hurting your Core Web Vitals scores. You can use the code in these examples to help ensure your projects stay on the right track.</p>
           <p><strong>Source: <a href="https://web.dev/patterns/web-vitals-patterns/">https://web.dev/patterns/web-vitals-patterns/</a></strong></p>
 
+          <!-- this is for testing web worker vs js defer -->
+          <style>
+            .toggle {
+              float: left;
+              width: 100px;
+              height: 100px;
+              margin: 10px;
+              background: #aaa;
+              overflow: hidden;
+            }
+            .placeholder {
+              float: left;
+              width: 100px;
+              height: 100px;
+              margin: 10px;
+              background: #333;
+            }
+          </style>
+          <div id="toggle1" class="toggle">1</div>
+          <div id="toggle2" class="toggle">2</div>
+          <div id="toggle3" class="toggle">3</div>
+          <div id="toggle4" class="toggle">4</div>
+          <div id="toggle5" class="toggle">5</div>
+          <div id="toggle6" class="toggle">6</div>
+          <div id="toggle7" class="toggle">7</div>
+          <div id="toggle8" class="toggle">8</div>
+          <div id="placeholder" class="placeholder"></div>
+          <div id="toggle9" class="toggle">9</div>
+          <div id="toggle10" class="toggle">10</div>
+          <div id="toggle11" class="toggle">11</div>
+          <div id="toggle12" class="toggle">12</div>
+          <div id="toggle13" class="toggle">13</div>
+          <div id="toggle14" class="toggle">14</div>
+          <script>
+            $(document).ready(function () {
+              $(document).click(function() {
+                $( "#toggle1" ).toggle( "bounce",   {easing: "linear", times: 3}, 1000);
+                $( "#toggle2" ).toggle( "scale",    {easing: "linear", percent: 0, origin: ["left", "top"]}, 1000);
+                $( "#toggle3" ).toggle( "blind",    {easing: "linear", direction: "up"}, 1000);
+                $( "#toggle4" ).toggle( "clip",     {easing: "linear", direction: "up"}, 1000);
+                $( "#toggle5" ).toggle( "drop",     {easing: "linear", direction: "up"}, 1000);
+                $( "#toggle6" ).toggle( "explode",  {easing: "linear", pieces: "50"}, 1000);
+                $( "#toggle7" ).toggle( "fade",     {easing: "linear"}, 1000);
+                $( "#toggle8" ).toggle( "fold",     {easing: "linear", size: 50}, 1000);
+                $( "#toggle9" ).toggle( "highlight",{easing: "linear", color: "#f0f000"}, 1000);
+                $( "#toggle10").toggle( "puff",     {easing: "linear", percent: 150}, 1000);
+                $( "#toggle11").toggle( "pulsate",  {easing: "linear", times: 5}, 1000);
+                $( "#toggle12").toggle( "shake",    {easing: "linear", direction: "left", distance: 20, times: 3}, 1000);
+                $( "#toggle13").toggle( "size",     {easing: "linear", to: {width:150, height: 150}, origin: ["top", "left"], scale: "both"}, 1000);
+                $( "#toggle14").toggle( "slide",    {easing: "linear", direction: "down"}, 1000);
+              });
+              $.blockUI();
+              setTimeout(function(){
+                $.blockUI();
+              }, 7000);
+            });
+          </script>
+
           <h3>Images</h3>
           <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
           <figure>
