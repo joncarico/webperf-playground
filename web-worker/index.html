@@ -5,13 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Web Worker Actions</title>
-    <link rel="stylesheet" href="webworker-actions.css">
+    <title>Web Worker</title>
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 20ch 1fr;
+            gap: 0.5rem;
+        }
+
+        button {
+            width: 20ch;
+        }
+    </style>>
 </head>
 
 <body>
     <main>
         <div>
+            <p>js test</p>>
             <button>inc</button>
             <button>double</button>
             <button>square</button>
@@ -20,13 +31,14 @@
     </main>
 
     <script>
-        const worker = new Worker('actions.js');
+        const worker = new Worker('./assets/worker.js');
         let input = 7;
 
         const actions = {
-            inc: './inc.js',
-            double: './double.js',
-            square: './square.js',
+            inc: './assets/inc.js',
+            double: './assets/double.js',
+            square: './assets/square.js',
+            jquery: './assets/jquery-3.7.0.min.js'
         };
 
         worker.postMessage({
