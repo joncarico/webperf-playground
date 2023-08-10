@@ -144,6 +144,147 @@
       }
     </style>
 
+    <style>
+      /*** web fonts and fallbacks ***/
+
+      /* roboto-regular - latin */
+      @font-face {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-display: block;
+          src: local('Roboto'), local('Roboto-Regular'),
+          url('https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff2') format('woff2'),
+          url('https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff') format('woff');
+      }
+      /* roboto-regular - fallback */
+      @font-face {
+        font-family: roboto-regular-fallback-font;
+        src: local(Arial);
+      }
+
+      /* roboto-bold - latin */
+      @font-face {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 700;
+          font-display: block;
+          src: local('Roboto Bold'), local('Roboto-Bold'),
+          url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff2') format('woff2'),
+          url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff') format('woff') ;
+      }
+      /* roboto-bold - fallback */
+      @font-face {
+        font-family: roboto-bold-fallback-font;
+        ascent-override: 100%;
+        descent-override: 20%;
+        line-gap-override: normal;
+        advance-override: 10;
+        src: local(Arial);
+      }
+
+      /* khand-regular - latin */
+      @font-face {
+          font-family: 'Khand';
+          font-style: normal;
+          font-weight: 400;
+          font-display: block;
+          src: local('Khand Regular'), local('Khand-Regular'),
+          url('https://screenrant.com/public/build/fonts/khand/khand-regular.woff2') format('woff2'),
+          url('https://screenrant.com/public/build/fonts/khand/khand-regular.woff') format('woff');
+      }
+      /* khand-regular - fallback */
+      @font-face {
+        font-family: khand-regular-fallback-font;
+        ascent-override: 100%;
+        descent-override: 20%;
+        line-gap-override: normal;
+        advance-override: 10;
+        src: local(Arial);
+      }
+
+      /* khand-bold - latin */
+      @font-face {
+          font-family: 'Khand';
+          font-style: normal;
+          font-weight: 700;
+          font-display: block;
+          src: local('Khand Bold'), local('Khand-Bold'),
+          url('https://screenrant.com/public/build/fonts/khand/khand-bold.woff2') format('woff2'),
+          url('https://screenrant.com/public/build/fonts/khand/khand-bold.woff') format('woff');
+      }
+      /* khand-bold - fallback */
+      @font-face {
+        font-family: khand-bold-fallback-font;
+        ascent-override: 100%;
+        descent-override: 20%;
+        line-gap-override: normal;
+        advance-override: 10;
+        src: local(Arial);
+      }
+
+
+      /*** testing css ***/
+      .text-container {
+        position: relative;
+        height: 10em;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .fallback {
+        position: absolute;
+        font-family: fallback-font;
+        border: 1px solid #0008;
+      }
+      .reference {
+        position: absolute;
+        font-family: Arial;
+        border: 1px solid #0008;
+      }
+      .custom {
+        position: absolute;
+        font-family: custom-font;
+        font-weight: 400;
+        color:red;
+        border: 1px solid #f008;
+      }
+      .roboto-regular-fallback {
+        position: absolute;
+        font-family: roboto-regular-fallback-font;
+        border: 1px solid #0008;
+      }
+      .roboto-regular-reference {
+        position: absolute;
+        font-family: Arial;
+        border: 1px solid #0008;
+      }
+      .roboto-regular-custom {
+        position: absolute;
+        font-family: Roboto;
+        font-weight: 400;
+        color:red;
+        border: 1px solid #f008;
+      }
+      .roboto-bold-fallback {
+        position: absolute;
+        font-family: roboto-bold-fallback-font;
+        border: 1px solid #0008;
+      }
+      .roboto-bold-reference {
+        position: absolute;
+        font-family: Arial;
+        border: 1px solid #0008;
+      }
+      .roboto-bold-custom {
+        position: absolute;
+        font-family: Roboto;
+        font-weight: 700;
+        color:red;
+        border: 1px solid #f008;
+      }
+    </style>
+
     <!-- MAIN CSS: remaining css not used in the initial viewport -->
       <!-- Non-render Blocking with Fallback -->
     <link rel="preload" href="assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" importance="high">
@@ -249,147 +390,6 @@
               }
             })
           </script>
-
-          <style>
-            /*** web fonts and fallbacks ***/
-
-            /* roboto-regular - latin */
-            @font-face {
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-display: block;
-                src: local('Roboto'), local('Roboto-Regular'),
-                url('https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff2') format('woff2'),
-                url('https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff') format('woff');
-            }
-            /* roboto-regular - fallback */
-            @font-face {
-              font-family: roboto-regular-fallback-font;
-              src: local(Arial);
-            }
-
-            /* roboto-bold - latin */
-            @font-face {
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 700;
-                font-display: block;
-                src: local('Roboto Bold'), local('Roboto-Bold'),
-                url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff2') format('woff2'),
-                url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff') format('woff') ;
-            }
-            /* roboto-bold - fallback */
-            @font-face {
-              font-family: roboto-bold-fallback-font;
-              ascent-override: 100%;
-              descent-override: 20%;
-              line-gap-override: normal;
-              advance-override: 10;
-              src: local(Arial);
-            }
-
-            /* khand-regular - latin */
-            @font-face {
-                font-family: 'Khand';
-                font-style: normal;
-                font-weight: 400;
-                font-display: block;
-                src: local('Khand Regular'), local('Khand-Regular'),
-                url('https://screenrant.com/public/build/fonts/khand/khand-regular.woff2') format('woff2'),
-                url('https://screenrant.com/public/build/fonts/khand/khand-regular.woff') format('woff');
-            }
-            /* khand-regular - fallback */
-            @font-face {
-              font-family: khand-regular-fallback-font;
-              ascent-override: 100%;
-              descent-override: 20%;
-              line-gap-override: normal;
-              advance-override: 10;
-              src: local(Arial);
-            }
-
-            /* khand-bold - latin */
-            @font-face {
-                font-family: 'Khand';
-                font-style: normal;
-                font-weight: 700;
-                font-display: block;
-                src: local('Khand Bold'), local('Khand-Bold'),
-                url('https://screenrant.com/public/build/fonts/khand/khand-bold.woff2') format('woff2'),
-                url('https://screenrant.com/public/build/fonts/khand/khand-bold.woff') format('woff');
-            }
-            /* khand-bold - fallback */
-            @font-face {
-              font-family: khand-bold-fallback-font;
-              ascent-override: 100%;
-              descent-override: 20%;
-              line-gap-override: normal;
-              advance-override: 10;
-              src: local(Arial);
-            }
-
-
-            /*** testing css ***/
-            .text-container {
-              position: relative;
-              height: 10em;
-            }
-            .hidden {
-              opacity: 0;
-            }
-            .fallback {
-              position: absolute;
-              font-family: fallback-font;
-              border: 1px solid #0008;
-            }
-            .reference {
-              position: absolute;
-              font-family: Arial;
-              border: 1px solid #0008;
-            }
-            .custom {
-              position: absolute;
-              font-family: custom-font;
-              font-weight: 400;
-              color:red;
-              border: 1px solid #f008;
-            }
-            .roboto-regular-fallback {
-              position: absolute;
-              font-family: roboto-regular-fallback-font;
-              border: 1px solid #0008;
-            }
-            .roboto-regular-reference {
-              position: absolute;
-              font-family: Arial;
-              border: 1px solid #0008;
-            }
-            .roboto-regular-custom {
-              position: absolute;
-              font-family: Roboto;
-              font-weight: 400;
-              color:red;
-              border: 1px solid #f008;
-            }
-            .roboto-bold-fallback {
-              position: absolute;
-              font-family: roboto-bold-fallback-font;
-              border: 1px solid #0008;
-            }
-            .roboto-bold-reference {
-              position: absolute;
-              font-family: Arial;
-              border: 1px solid #0008;
-            }
-            .roboto-bold-custom {
-              position: absolute;
-              font-family: Roboto;
-              font-weight: 700;
-              color:red;
-              border: 1px solid #f008;
-            }
-          </style>
 
           <h2>Roboto Regular - Font-face Descriptor Result</h2>
           <p>
