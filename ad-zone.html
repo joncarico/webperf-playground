@@ -225,17 +225,24 @@
 
     <style>
       .ad-zone-1 {
+        will-change: transform;
         background-color: #990000;
-        max-height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*max-height: 0;
         overflow: hidden;
         -webkit-transition: max-height 1s;
         -moz-transition: max-height 1s;
         -ms-transition: max-height 1s;
         -o-transition: max-height 1s;
-        transition: max-height 1s;
+        transition: max-height 1s;*/
+        transition: transform 3s;
       }
-      body:hover .ad-zone-1 {
-        max-height: 100vh;
+      body:active .ad-zone-1 {
+        transform: position;
+        /*max-height: 100vh;*/
+        position: relative;
       }
     </style>
     <div class="ad-zone-1">
