@@ -224,13 +224,13 @@
 
 
     <style>
-      .ad-zone-1 {
+      #ad-zone-1 {
         height: 0;
         background-color: #990000;
         overflow: hidden;
       }
     </style>
-    <div id="ad-zone-1" class="ad-zone-1">
+    <div id="ad-zone-1">
       <span>ad zone 1</span>
     </div>
 
@@ -363,13 +363,10 @@
             setTimeout(resolve, time);
         });
       }
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
       async function autoRefreshDiv() {
         var content = document.getElementById("w-content");
         content.style.opacity = "0";
-        var height = getRandomInt(350);
+        var height = Math.floor(Math.random() * 350);
         var adzone = document.getElementById("ad-zone-1");
         adzone.style.height = `${height}px`;
         await wait(50);
