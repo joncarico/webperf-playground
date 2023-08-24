@@ -224,37 +224,18 @@
 
 
     <style>
-      body {
-        opacity: 0;
-      }
       .ad-zone-1 {
-        will-change: transform;
+        height: 0;
         background-color: #990000;
-        /*position: absolute;
-        top: 0;
-        left: 0;*/
-        max-height: 0;
         overflow: hidden;
-        /*-webkit-transition: max-height 1s;
-        -moz-transition: max-height 1s;
-        -ms-transition: max-height 1s;
-        -o-transition: max-height 1s;
-        transition: max-height 1s;*/
-        transition: max-height 3s;
-      }
-      body:hover .ad-zone-1 {
-        transform: max-height;
-        max-height: 100vh;
-        /*transform: position;
-        position: relative;*/
       }
     </style>
-    <div class="ad-zone-1">
-      <span>ad zone</span>
+    <div id="ad-zone-1" class="ad-zone-1">
+      <span>ad zone 1</span>
       <img src="https://via.placeholder.com/600x300.jpg?text=Ad+Zone+1" alt="ad-zone-1" />
     </div>
 
-    <main>
+    <main id="w-content">
         <section>
           <p>I use these templates as a starter for my projects. I hope you find them useful!</p>
           <p><strong>Source: <a href="https://github.com/joncarico/web-vitals_starter-templates">https://github.com/joncarico/web-vitals_starter-templates</a></strong></p>
@@ -377,5 +358,25 @@
         </noscript>
       </div>
     </div>
+    <script>
+      function wait(time) {
+        return new Promise(resolve => {
+            setTimeout(resolve, time);
+        });
+      }
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+      async function autoRefreshDiv() {
+        var content = document.getElementById("w-content");
+        content.style.opacity = "0";
+        var height = getRandomInt(350);
+        var adzone = document.getElementById("ad-zone-1");
+        adzone.style.height = `${height}px`;
+        await wait(50);
+        content.style.opacity = "1";
+      }
+      setInterval(autoRefreshDiv, 3000); 
+    </script>
 </body>
 </html>
