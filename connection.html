@@ -349,7 +349,7 @@
     </div>
     <script>
       console.log('effectiveType: ' + navigator.connection.effectiveType);
-      if (navigator.connection.effectiveType == "2g") {
+      if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g") {
         console.log('disable ads for detectable 2g users');
       }
       else {
