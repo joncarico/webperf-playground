@@ -348,24 +348,16 @@
       </div>
     </div>
     <script>
-      // Effective connection type determined using a combination of recently observed rtt and downlink values: ' +
       console.log('effectiveType: ' + navigator.connection.effectiveType);
-      if (navigator.connection.effectiveType == 2g) {
-        console.log('disable ads for 2g users');
+      if (navigator.connection.effectiveType == "2g") {
+        console.log('disable ads for detectable 2g users');
       }
-      if (navigator.connection.effectiveType = 4g) {
-        console.log('ads for 4g users')
+      else {
+        console.log('ads for everyone (but detectable 2g) users')
         const swiperJS = document.createElement('script');
         swiperJS.type = "text/javascript";
-        swiperJS.src = "https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js";
+        swiperJS.src = "https://code.jquery.com/jquery-3.7.1.min.js";
         document.head.appendChild(swiperJS);
-      }
-
-      navigator.connection.addEventListener('change', logNetworkInfo);
-      
-      function logNetworkInfo() {
-        // Effective connection type determined using a combination of recently observed rtt and downlink values: ' +
-        console.log('effectiveType: ' + navigator.connection.effectiveType);
       }
     </script>
 </body>
