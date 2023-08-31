@@ -353,11 +353,15 @@
         console.log('disable ads for detectable 2g users');
       }
       else {
-        console.log('ads for everyone (but detectable 2g) users')
-        const swiperJS = document.createElement('script');
-        swiperJS.type = "text/javascript";
-        swiperJS.src = "https://code.jquery.com/jquery-3.7.1.min.js";
-        document.head.appendChild(swiperJS);
+        console.log('ads for everyone except detectable 2g users');
+        function getScript(url) {
+            e = document.createElement('script');
+            e.setAttribute('defer', '');
+            e.src = url;
+            document.body.appendChild(e);
+        }
+        getScript('https://code.jquery.com/ui/1.13.2/jquery-ui.min.js');
+        getScript('https://code.jquery.com/jquery-3.7.1.min.js');
       }
     </script>
 </body>
