@@ -350,6 +350,16 @@
     <script>
       // Effective connection type determined using a combination of recently observed rtt and downlink values: ' +
       console.log('effectiveType: ' + navigator.connection.effectiveType);
+      if (navigator.connection.effectiveType == 2g) {
+        console.log('disable ads for 2g users');
+      }
+      if (navigator.connection.effectiveType = 4g) {
+        console.log('ads for 4g users')
+        const swiperJS = document.createElement('script');
+        swiperJS.type = "text/javascript";
+        swiperJS.src = "https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js";
+        document.head.appendChild(swiperJS);
+      }
 
       navigator.connection.addEventListener('change', logNetworkInfo);
       
