@@ -263,6 +263,18 @@
             </noscript>
           </div>
 
+          <!-- Non-LCP Image - Native Lazy Loading -->
+          <figure>
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=NonLCP+Source+Native+Lazy+Media+Max+720" />
+              <source media="(min-width: 721px)" width="600" height="600" srcset="https://via.placeholder.com/600x600.jpg?text=NonLCP+Source+Native+Lazy+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
+              <!--[if IE 9]></video><![endif]-->
+              <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=NonLCP+Img+Src+Native+Lazy" alt="Image Alt" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Image Caption</figcaption>
+          </figure>
+
 
           <h3>Videos</h3>
           <div class="lazyload" data-noscript="">
