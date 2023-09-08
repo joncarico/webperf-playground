@@ -358,5 +358,23 @@
         </noscript>
       </div>
     </div>
+
+    <script>
+      console.log('effectiveType: ' + navigator.connection.effectiveType);
+      if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g") {
+        console.log('disable js libraries for detectable 2g users');
+      }
+      else {
+        console.log('js libraries for everyone except detectable 2g users');
+        function getScript(url) {
+            e = document.createElement('script');
+            e.setAttribute('defer', '');
+            e.src = url;
+            document.body.appendChild(e);
+        }
+        getScript('https://code.jquery.com/ui/1.13.2/jquery-ui.min.js');
+        getScript('https://code.jquery.com/jquery-3.7.1.min.js');
+      }
+    </script>
 </body>
 </html>
