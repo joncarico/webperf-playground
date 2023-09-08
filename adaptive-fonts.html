@@ -3,13 +3,31 @@
 <head>
     <title>Adaptive Font Loading</title>
 
-    <link rel="preload" href="/public/build/fonts/khand/khand-regular.woff2" as="font" type="font/woff2" fetchpriority="high" crossorigin>
-    <link rel="preload" href="/public/build/fonts/khand/khand-bold.woff2" as="font" type="font/woff2" fetchpriority="high" crossorigin>
-    <link rel="preload" href="/public/build/fonts/roboto/roboto-regular.woff2" as="font" type="font/woff2" fetchpriority="high" crossorigin>
-    <link rel="preload" href="/public/build/fonts/roboto/roboto-bold.woff2" as="font" type="font/woff2" fetchpriority="high" crossorigin>
+    <script>
+    console.log('effectiveType: ' + navigator.connection.effectiveType);
+    if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g") {
+        console.log('replace web fonts with system fonts for detectable 2g connections');
+    }
+    else {
+        console.log('use web fonts except for detectable 2g connections');
+        function getScript(url) {
+            e = document.createElement('script');
+            e.setAttribute('defer', '');
+            e.src = url;
+            document.body.appendChild(e);
+        }
+        getScript('https://code.jquery.com/ui/1.13.2/jquery-ui.min.js');
+        getScript('https://code.jquery.com/jquery-3.7.1.min.js');
+    }
+    </script>
 
-    <link rel="preload" href="/public/build/fonts/icons/icomoon.woff2?v=1.7" as="font" type="font/woff2" fetchpriority="low" crossorigin>
-    <link rel="preload" href="/public/build/fonts/icons/icomoon.woff?v=1.7" as="font" type="font/woff" fetchpriority="low" crossorigin>
+    <link rel="preload" href="/public/build/fonts/khand/khand-regular.woff2" as="font" type="font/woff2" fetchpriority="high">
+    <link rel="preload" href="/public/build/fonts/khand/khand-bold.woff2" as="font" type="font/woff2" fetchpriority="high">
+    <link rel="preload" href="/public/build/fonts/roboto/roboto-regular.woff2" as="font" type="font/woff2" fetchpriority="high">
+    <link rel="preload" href="/public/build/fonts/roboto/roboto-bold.woff2" as="font" type="font/woff2" fetchpriority="high">
+
+    <link rel="preload" href="/public/build/fonts/icons/icomoon.woff2?v=1.7" as="font" type="font/woff2" fetchpriority="low">
+    <link rel="preload" href="/public/build/fonts/icons/icomoon.woff?v=1.7" as="font" type="font/woff" fetchpriority="low">
 
     <style>
         /* khand-regular - latin */
@@ -71,6 +89,9 @@
             font-display: block;
         }
     </style>
+
+
+
 
     <style>
         .heading_title {
