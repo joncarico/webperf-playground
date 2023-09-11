@@ -7,29 +7,59 @@
     console.log('effectiveType: ' + navigator.connection.effectiveType);
     if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g") {
         console.log('replace web fonts with system fonts for detectable 2g connections');
+
+        document.head.insertAdjacentHTML("beforeend", `<style>
+        /* khand-regular - latin */
+        @font-face {
+            font-family: 'Khand';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Arial');
+        }
+    
+        /* khand-bold - latin */
+        @font-face {
+            font-family: 'Khand';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Arial Bold');
+        }
+    
+        /* roboto-regular - latin */
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Arial');
+        }
+    
+        /* roboto-bold - latin */
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Arial Bold');
+        }
+        </style>`)
     }
     else {
         console.log('use web fonts except for detectable 2g connections');
-        function getScript(url) {
-            e = document.createElement('script');
-            e.setAttribute('defer', '');
-            e.src = url;
-            document.body.appendChild(e);
+
+        function getPreload(url) {
+            e = document.createElement('link');
+            e.href = url;
+            e.setAttribute('rel', 'preload');
+            e.setAttribute('as', 'font');
+            e.setAttribute('type', 'font/woff2');
+            e.setAttribute('fetchpriority', 'high');
+            document.head.appendChild(e);
         }
-        getScript('https://code.jquery.com/ui/1.13.2/jquery-ui.min.js');
-        getScript('https://code.jquery.com/jquery-3.7.1.min.js');
-    }
-    </script>
+        getPreload('https://screenrant.com/public/build/fonts/khand/khand-regular.woff2');
+        getPreload('https://screenrant.com/public/build/fonts/khand/khand-bold.woff2');
+        getPreload('https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff2');
+        getPreload('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff2');
 
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/khand/khand-regular.woff2" as="font" type="font/woff2" fetchpriority="high">
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/khand/khand-bold.woff2" as="font" type="font/woff2" fetchpriority="high">
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/roboto/roboto-regular.woff2" as="font" type="font/woff2" fetchpriority="high">
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff2" as="font" type="font/woff2" fetchpriority="high">
-
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/icons/icomoon.woff2?v=1.7" as="font" type="font/woff2" fetchpriority="low">
-    <link rel="preload" href="https://screenrant.com/public/build/fonts/icons/icomoon.woff?v=1.7" as="font" type="font/woff" fetchpriority="low">
-
-    <style>
+        document.head.insertAdjacentHTML("beforeend", `<style>
         /* khand-regular - latin */
         @font-face {
             font-family: 'Khand';
@@ -73,8 +103,14 @@
                 url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff2') format('woff2'),
                 url('https://screenrant.com/public/build/fonts/roboto/roboto-bold.woff') format('woff');
         }
-    </style>
-    
+        </style>`)
+    }
+    </script>
+
+
+    <link rel="preload" href="https://screenrant.com/public/build/fonts/icons/icomoon.woff2?v=1.7" as="font" type="font/woff2" fetchpriority="low">
+    <link rel="preload" href="https://screenrant.com/public/build/fonts/icons/icomoon.woff?v=1.7" as="font" type="font/woff" fetchpriority="low">
+
     <style>
         @font-face {
             font-family: 'icomoon';
@@ -113,12 +149,22 @@
             font-family: Roboto,sans-serif;
         }
     </style>
+
+
 </head>
 
 <body>
+
     <h1 class="heading_title">Why The Mandalorian Season 3, Episode 3 Is Dividing Star Wars Fans</h1>
     <p class="heading_excerpt">The Mandalorian season 3, episode 3 took a surprising turn and introduced a new subplot that, while intriguing, is diving Star Wars audiences. </p>
     <p><strong><em><a href="https://screenrant.com/tag/the-mandalorian/">The Mandalorian</a></em></strong> season 3, episode 3, is dividing <em>Star Wars</em> fans – very much like the episode itself is split into two separate plotlines. After <em>The Book of Boba Fett</em> brought in a significant level of criticism to the Mandoverse, which was then followed by <em>Andor</em>’s widely praised, completely different approach to <em>Star Wars</em>, the bar was high for <em>The Mandalorian</em> season 3. Though <em>The Mandalorian</em>’s latest season started strong, the series’ newest subplot was a risky one.</p>
+
+
+
+    <script>
+        // window.alert("hold");
+        </script>
+        
 </body>
 
 </html>
