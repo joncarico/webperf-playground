@@ -10,10 +10,13 @@
         url('https://www.hotcars.com/public/build/fonts/barlow-semi-condensed/barlow-semi-condensed-regular.woff2') format('woff2'),
         url('https://www.hotcars.com/public/build/fonts/barlow-semi-condensed/barlow-semi-condensed-regular.woff') format('woff');
     }
-    @font-face {
-        font-family: 'Barlow Semi Condensed 400 Fallback';
-        src: local('Arial');
-    }
+@font-face {
+    font-family: 'Barlow Semi Condensed 400 Fallback';
+    src: local('Arial');
+    size-adjust: 86%;
+    ascent-override: 115%;
+    descent-override: 18%;
+}
     p {
         font-family: 'Barlow Semi Condensed', 'Barlow Semi Condensed 400 Fallback', sans-serif;
     }
