@@ -205,6 +205,16 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="">
     <meta name="theme-color" content="#ffffff">
+
+    <script>
+      console.log('effectiveType: ' + navigator.connection.effectiveType);
+      if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g" || navigator.connection.effectiveType == "3g") {
+          console.log('removing featured image for slow network connection');
+          document.head.insertAdjacentHTML("beforeend", `<style>
+          .heading_image {display: none !important;}
+          </style>`)
+      }
+    </script>
 </head>
 
 <body>
@@ -223,16 +233,18 @@
 
         <h1 aria-level="1">Web Vitals Starter Templates</h1>
         <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
-        <figure>
-          <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
-            <source media="(min-width: 721px)" width="1200" height="600" srcset="https://via.placeholder.com/1200x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
-            <!--[if IE 9]></video><![endif]-->
-            <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" fetchpriority="high" />
-          </picture>
-          <figcaption>Image Caption</figcaption>
-        </figure>
+        <div class="heading_image">
+          <figure>
+            <picture>
+              <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
+              <source media="(min-width: 721px)" width="1200" height="600" srcset="https://via.placeholder.com/1200x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
+              <!--[if IE 9]></video><![endif]-->
+              <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" fetchpriority="high" />
+            </picture>
+            <figcaption>Image Caption</figcaption>
+          </figure>
+        </div>
     </header>
 
     <main>
