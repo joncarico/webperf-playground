@@ -211,7 +211,7 @@
       if (navigator.connection.effectiveType == "slow-2g" || navigator.connection.effectiveType == "2g" || navigator.connection.effectiveType == "3g") {
           console.log('removing featured image for slow network connection');
           document.head.insertAdjacentHTML("beforeend", `<style>
-          .heading_image {display: none !important;}
+          .heading_image {max-width: 150px !important;}
           </style>`)
       }
     </script>
