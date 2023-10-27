@@ -222,6 +222,17 @@
         </nav>
 
         <h1 aria-level="1">Web Vitals Starter Templates</h1>
+        <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
+        <figure>
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
+            <source media="(min-width: 721px)" width="1200" height="600" srcset="https://via.placeholder.com/1200x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
+            <!--[if IE 9]></video><![endif]-->
+            <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" fetchpriority="high" />
+          </picture>
+          <figcaption>Image Caption</figcaption>
+        </figure>
     </header>
 
     <main>
@@ -234,17 +245,7 @@
           <p>Maecenas orci mauris, ultricies nec enim in, auctor posuere risus. Donec sit amet metus eu nibh commodo condimentum. Fusce vel est tempor, auctor magna varius, euismod sapien. Pellentesque et lectus euismod, faucibus mi aliquet, imperdiet metus. Morbi a ex vitae lacus suscipit efficitur. Suspendisse est dui, vulputate vulputate tortor non, posuere gravida arcu. Duis sed tellus sed urna accumsan maximus. Cras feugiat eget sapien sollicitudin auctor. Vestibulum in vulputate lectus, in interdum sem. Pellentesque auctor ante vitae convallis rutrum. Sed at lacinia lacus. Morbi vitae consectetur sem, et tincidunt purus. Nam ultrices, quam ac consectetur dictum, ante magna mattis diam, quis interdum nunc eros ut nibh.</p>
 
           <h3>Images</h3>
-          <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
-          <figure>
-            <picture>
-              <!--[if IE 9]><video style="display: none;"><![endif]-->
-              <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
-              <source media="(min-width: 721px)" width="1200" height="600" srcset="https://via.placeholder.com/1200x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/600x600.jpg?text=Source+Media+Min+721+3x 3x" />
-              <!--[if IE 9]></video><![endif]-->
-              <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" fetchpriority="high" />
-            </picture>
-            <figcaption>Image Caption</figcaption>
-          </figure>
+          
 
           <!-- Non-LCP Image - Lazy Loading with Fallback https://github.com/aFarkas/lazysizes/tree/master/plugins/noscript -->
           <div class="lazyload" data-noscript="">
