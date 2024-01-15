@@ -364,5 +364,27 @@
         getScript('https://code.jquery.com/jquery-3.7.1.min.js');
       }
     </script>
+    <script>
+      ['click', 'scroll', 'touchstart'].forEach(function(e) {
+        window.addEventListener(e, firstInteraction, {
+            once: true
+        });
+    });
+    var userInteracted = false;
+    
+    function firstInteraction() {
+        if (!userInteracted) {
+            userInteracted = true;
+            console.log('first interaction');
+            function getScript(url) {
+                e = document.createElement('script');
+                e.setAttribute('defer', '');
+                e.src = url;
+                document.body.appendChild(e);
+            }
+            getScript('https://screenrant.com/public/build/admiral.js');
+        }
+    }
+    </script>
 </body>
 </html>
